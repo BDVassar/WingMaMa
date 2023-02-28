@@ -11,6 +11,10 @@ public class FeedingService
     _repo = repo;
   }
 
-
+  internal Feeding Create(Feeding feedData)
+  {
+    Feeding feed = _repo.Create(feedData);
+    return feed;
+  }
 
 }
