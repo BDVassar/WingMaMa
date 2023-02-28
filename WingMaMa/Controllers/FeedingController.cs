@@ -25,10 +25,10 @@ public class FeedingController : ControllerBase
       Feeding Feed = _FeedingService.Create(FeedData);
       return Ok(Feed);
     }
-    catch (System.Exception)
+    catch (Exception e)
     {
 
-      throw;
+      return BadRequest(e.Message);
     }
   }
 }
