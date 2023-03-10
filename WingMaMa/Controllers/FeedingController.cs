@@ -16,12 +16,12 @@ public class FeedingController : ControllerBase
   }
 
   [HttpPost]
-  [Authorize]
-  public async Task<ActionResult<Feeding>> Create([FromBody] Feeding FeedData)
+  // [Authorize]
+  public ActionResult<Feeding> Create([FromBody] Feeding FeedData)
   {
     try
     {
-      Account userInfo = await _auth.GetUserInfoAsync<Account>(HttpContext);
+      // Account userInfo = await _auth.GetUserInfoAsync<Account>(HttpContext);
       Feeding Feed = _FeedingService.Create(FeedData);
       return Ok(Feed);
     }

@@ -22,10 +22,25 @@
 </template>
 
 <script>
+import { logger } from "../utils/Logger";
+import { feedService } from "../services/FeedService"
+
 export default {
   setup() {
+
+
+
+
     return {
+
       async createFeed() {
+        try {
+
+          let date = new Date
+          await feedService.createFeed(date)
+        } catch (error) {
+          return logger.error(error.message)
+        }
 
       }
 
