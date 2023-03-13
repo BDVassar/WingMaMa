@@ -37,7 +37,7 @@ export default {
         try {
 
           let date = new Date
-          await feedService.createFeed(date)
+          await feedService.createFeed(new date.toDateString)
         } catch (error) {
           return logger.error(error.message)
         }
