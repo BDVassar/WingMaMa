@@ -35,9 +35,9 @@ export default {
 
       async createFeed() {
         try {
-
+          debugger
           let date = new Date
-          await feedService.createFeed(new date.toDateString)
+          await feedService.createFeed(date)
         } catch (error) {
           return logger.error(error.message)
         }

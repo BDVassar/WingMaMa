@@ -14,9 +14,9 @@ public class FeedingRepository
   {
     string sql = @"
     INSERT INTO feeding
-    ( createdAt)
+    (createdAt)
     VALUES
-    ( @createdAt)
+    (@createdAt)
     SELECT LAST_INSERT_ID();
     ";
     int id = _db.ExecuteScalar<int>(sql, feedData);
